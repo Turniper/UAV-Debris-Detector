@@ -741,6 +741,7 @@ int main(int argc, char** argv)
 		IMAGE_DIR = argv[1];
 		vector<string> files = readDir(IMAGE_DIR);
 		string targDir = IMAGE_DIR + "/HasDebris/";
+		CreateDirectory(targDir.c_str(), NULL);
 		int total = 0;
 		int positive = 0;
 		int corner = 0;
@@ -766,14 +767,14 @@ int main(int argc, char** argv)
 			if (cur == true) {
 				//save the file
 				imwrite((targDir + files[i]), src);
-				//cout << (IMAGE_DIR + "/" + files[i])  << "\n";
+				cout << (IMAGE_DIR + "/" + files[i])  << "\n";
 				//remove((IMAGE_DIR + "/" + files[i]).c_str());
 			}
 			total++;
 			cout << "Completed: " << total << endl;
-			cout << "Edge: " << edge << endl;
-			cout << "Corner: " << corner << endl;
-			cout << "Correct: " << positive << endl;
+			//cout << "Edge: " << edge << endl;
+			//cout << "Corner: " << corner << endl;
+			//cout << "Correct: " << positive << endl;
 		}
 
 
